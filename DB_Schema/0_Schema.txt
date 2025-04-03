@@ -1,0 +1,43 @@
+====================================
+MedianBTOFlatPrices
+====================================
+financial_year			int
+room_type			int
+total_room_price			real
+increment_price_in_percent 		real
+
+
+====================================
+MedianResaleFlatPrices
+====================================
+financial_year			int
+room_type			int
+total_room_price			real
+increment_price_in_percent 		real
+
+
+==================================
+Enhanced_CPF_Housing_Grant 
+==================================
+min_avg_monthly_household_income    int
+max_avg_monthly_household_income	int
+ehg_amount			int
+
+
+===========================================
+GrossMonthlyIncomeFullTime
+===========================================
+financial_year				 int
+gross_monthly_income_excluding_employer_cpf	 int
+increment_by_percent			real
+
+
+SELECT * from "MedianBTOFlatPrices" WHERE financial_year BETWEEN 2013 and 2023
+SELECT * from "MedianResaleFlatPrices" WHERE financial_year BETWEEN 2013 and 2023;
+SELECT * FROM "GrossMonthlyIncomeFullTime" WHERE financial_year BETWEEN 2013 and 2023
+SELECT * from "Enhanced_CPF_Housing_Grant";
+
+SELECT financial_year, gross_monthly_income_excluding_employer_cpf from "GrossMonthlyIncomeFullTime" WHERE financial_year = 2023;
+SELECT financial_year, room_type, total_room_price from "MedianBTOFlatPrices" WHERE financial_year = 2023;
+SELECT ehg_amount from "Enhanced_CPF_Housing_Grant" WHERE 4550 > min_avg_monthly_household_income AND 4550 < max_avg_monthly_household_income;
+
